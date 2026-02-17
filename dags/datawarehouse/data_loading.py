@@ -6,8 +6,8 @@ from datetime import date
 logger = logging.getLogger(__name__)
 
 
-def load_path():
-    file_path = f"../../data/yt-data_{date.today()}.json"
+def load_data():
+    file_path = f"./data/yt-data_{date.today()}.json"
     try: 
         logger.info(f"Processing file: yt-data_{date.today()}")
         with open(file_path, "r", encoding="utf-8") as raw_data: 
@@ -19,3 +19,4 @@ def load_path():
         raise
     except json.JSONDecodeError: 
         logger.error(f"Invalid JSON in file: {file_path}") 
+        raise
