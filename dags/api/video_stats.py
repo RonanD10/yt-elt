@@ -91,7 +91,7 @@ def extract_video_data(video_ids):
 
 @task
 def save_to_json(extracted_data):
-    file_path = f"./data/yt-etl_{date.today()}.json"
+    file_path = f"./data/yt-data_{date.today()}.json"
     with open(file_path, "w", encoding="utf-8") as josn_outfile:
         json.dump(extracted_data, josn_outfile, indent=4, ensure_ascii=False)
 
